@@ -1,6 +1,6 @@
-import sys
+#import sys
 from PyQt5.QtWidgets import QMainWindow
-sys.path.append(r'C:\\Shriram\Personal\\08_RobotFramework')
+#sys.path.append(r'C:\\Shriram\Personal\\08_RobotFramework')
 
 from LoginSystem.LoginSystem import LoginSystem
 import pytest
