@@ -22,10 +22,11 @@ jobs:
         python-version: 3.8
     - name: Install dependencies
       run: |
-        sudo apt install -y xvfb x11-utils libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0
+        sudo apt install -y xvfb x11-utils libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xkb-dev libxcb-shape0-dev libxcb-xinerama0-dev libxcb-xtest0-dev
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      services: xvfb
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
