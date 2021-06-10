@@ -37,6 +37,6 @@ jobs:
         python-root: '.'
         skip-flake8: true
         mypy-flags: '--ignore-missing-imports'
-    - name: Test with pytest
+    - name: test with pytest
       run: |
         python -m pytest
