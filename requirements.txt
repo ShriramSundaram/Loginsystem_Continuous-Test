@@ -6,3 +6,4 @@
 #
 PyQt5
 pytest-qt
+pytest coverage

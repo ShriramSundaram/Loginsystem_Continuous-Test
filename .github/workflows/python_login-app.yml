@@ -22,6 +22,7 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
+        sudo apt install -y xvfb x11-utils libxkbcommon-x11-0
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -38,6 +39,9 @@ jobs:
         skip-flake8: true
         mypy-flags: '--ignore-missing-imports'
     - name: Test with pytest
+      env:
+        QT_DEBUG_PLUGINS: 1
       run: |
+        ulimit -c unlimited
         # calling via python will also add the current directory to sys.path
         python -m pytest
