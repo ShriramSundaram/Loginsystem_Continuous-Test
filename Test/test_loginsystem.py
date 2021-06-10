@@ -18,7 +18,7 @@ def test_user_input(login_system):
 
 
 def test_password(login_system):
-    assert login_system.label_2.text() == "Password"
+    assert login_system.label_3.text() == "Password"
 
 
 def test_headline(login_system):
@@ -26,7 +26,7 @@ def test_headline(login_system):
 
 
 def test_Log(login_system):
-    assert login_system.label_6.text() == "Log"
+    assert login_system.label_6.text() == "Log:"
 
 
 def test_sign_up(login_system):
