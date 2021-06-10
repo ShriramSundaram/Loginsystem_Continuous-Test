@@ -19,9 +19,9 @@ class LoginSystem(QMainWindow):
         self.New_UserName = ""
         self.New_Password = ""
         self.Confirm_Password = ""
-        file = open("LoginInfo")
-        self.already_saved = file.readlines()
-        file.close()
+        #file = open("LoginInfo")
+        #self.already_saved = file.readlines()
+        #file.close()
 
         super(LoginSystem, self).__init__()
         self.setObjectName("MainWindow")
