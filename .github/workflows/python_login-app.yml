@@ -37,6 +37,7 @@ jobs:
         python-root: '.'
         skip-flake8: true
         mypy-flags: '--ignore-missing-imports'
-    - name: test with pytest
+    - name: Test with pytest
       run: |
+        # calling via python will also add the current directory to sys.path
         python -m pytest
