@@ -40,4 +40,4 @@ jobs:
     - name: Test with pytest
       run: |
         # calling via python will also add the current directory to sys.path
-        python -m pytest
+        python -m pytest-qt
