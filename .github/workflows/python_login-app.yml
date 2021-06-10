@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.8
     - name: Install dependencies
       run: |
         sudo apt install -y xvfb x11-utils libxkbcommon-x11-0
@@ -44,4 +44,4 @@ jobs:
       run: |
         ulimit -c unlimited
         # calling via python will also add the current directory to sys.path
-        python -m pytest
+        sudo catchsegv xvfb-run --auto-servernum `which coverage` run -m pytest
