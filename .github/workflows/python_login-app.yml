@@ -35,7 +35,8 @@ jobs:
       uses: alexanderdamiani/pylinter@v1.1.3
       with:
         python-root: '.'
-        flake8-flags: '--count --show-source --statistics'
+        skip-flake8: true
+        mypy-flags: '--ignore-missing-imports'
     - name: Test with pytest
       run: |
         python -m pytest
