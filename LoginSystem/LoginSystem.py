@@ -3,6 +3,7 @@ Python LoginSystem System
 
 """
 import sys, os
+import platform
 
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import Qt
@@ -19,9 +20,13 @@ class LoginSystem(QMainWindow):
         self.New_UserName = ""
         self.New_Password = ""
         self.Confirm_Password = ""
+        print(platform.system())
         dir = os.path.curdir
         print(dir)
-        file = open(dir + "/LoginInfo")
+        if str(platform.system()) == "Windows":
+            file = open(dir + ".//LoginInfo")
+        elif str(platform.system()) == "Linux":
+            file = open(dir + "/LoginInfo")
         self.already_saved = file.readlines()
         file.close()
 
@@ -173,7 +178,10 @@ class LoginSystem(QMainWindow):
                 self.label_6.setText("The Username already exist!!!")
             else:
                 self.label_6.setText("Sign Up Successful")
-                New_Login = open("/LoginInfo", 'a')
+                if str(platform.system()) == "Linux":
+                    New_Login = open("/LoginInfo", 'a')
+                elif str(platform.system()) == "Windows":
+                    New_Login = open("./LoginInfo", 'a')
                 New_UserName = str(self.New_UserName)
                 New_Password = str(self.New_Password)
 
