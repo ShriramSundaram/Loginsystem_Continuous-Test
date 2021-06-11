@@ -20,8 +20,7 @@ class LoginSystem(QMainWindow):
         self.New_UserName = ""
         self.New_Password = ""
         self.Confirm_Password = ""
-
-        dir = os.path.curdi
+        dir = os.path.curdir
         if str(platform.system()) == "Windows":
             file = open(dir + ".//LoginInfo")
         elif str(platform.system()) == "Linux":
