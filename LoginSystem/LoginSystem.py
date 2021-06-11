@@ -10,6 +10,7 @@ import os
 import platform
 
 from PyQt5.QtWidgets import QMainWindow
+from PyQt5 import QtGui, QtWidgets, QtCore
 
 
 class LoginSystem(QMainWindow):

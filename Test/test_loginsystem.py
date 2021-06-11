@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow
+
 from LoginSystem.LoginSystem import LoginSystem
 import pytest
 
