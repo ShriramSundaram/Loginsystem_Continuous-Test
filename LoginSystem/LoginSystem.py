@@ -2,7 +2,7 @@
 Python LoginSystem System
 
 """
-import sys
+import sys, os
 
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import Qt
@@ -19,7 +19,9 @@ class LoginSystem(QMainWindow):
         self.New_UserName = ""
         self.New_Password = ""
         self.Confirm_Password = ""
-        file = open("..//LoginInfo")
+        dir = os.path.curdir
+        print(dir)
+        file = open(dir + "./LoginInfo")
         self.already_saved = file.readlines()
         file.close()
 
