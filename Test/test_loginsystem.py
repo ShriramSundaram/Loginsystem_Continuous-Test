@@ -1,4 +1,4 @@
-
+from PyQt5 import QtCore
 from LoginSystem.LoginSystem import LoginSystem
 import pytest
 
@@ -40,3 +40,13 @@ def test_label_confirm_password(login_system):
 
 def test_new_password(login_system):
     assert login_system.label_new_password.text() == "New Password"
+
+
+def test_button(login_system, qtbot):
+    def on_timeout():
+        qtbot.keyClicks(login_system.lineEdit_username, "")
+        qtbot.mouseClick(login_system.button_login, QtCore.Qt.LeftButton)
+
+    QtCore.QTimer.singleShot(0, on_timeout)
+    qtbot.mouseClick(login_system.button_login, QtCore.Qt.LeftButton)
+    assert login_system.label_log != ""
