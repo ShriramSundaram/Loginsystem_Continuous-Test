@@ -21,7 +21,7 @@ class LoginSystem(QMainWindow):
         self.Confirm_Password = ""
         dir = os.path.curdir
         print(dir)
-        file = open(dir + "./LoginInfo")
+        file = open(dir + "/LoginInfo")
         self.already_saved = file.readlines()
         file.close()
 
@@ -173,7 +173,7 @@ class LoginSystem(QMainWindow):
                 self.label_6.setText("The Username already exist!!!")
             else:
                 self.label_6.setText("Sign Up Successful")
-                New_Login = open("..//LoginInfo", 'a')
+                New_Login = open("/LoginInfo", 'a')
                 New_UserName = str(self.New_UserName)
                 New_Password = str(self.New_Password)
 
