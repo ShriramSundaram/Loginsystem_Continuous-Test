@@ -131,7 +131,7 @@ class LoginSystem(QMainWindow):
 
     def inputsFromUser(self):
         if self.UserName is not None:
-            self.UserName = str(self.lineEdit.text())
+            self.UserName = str(self.lineEdit_username.text())
             self.Password = str(self.lineEdit_password.text())
             self.openSource()
 
