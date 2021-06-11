@@ -35,7 +35,6 @@ jobs:
     - name: linting
       uses: alexanderdamiani/pylinter@v1.1.3
       with:
-        python-root: '.'
         skip-flake8: true
         mypy-flags: '--ignore-missing-imports'
     - name: Test with pytest
@@ -44,4 +43,4 @@ jobs:
       run: |
         ulimit -c unlimited
         # calling via python will also add the current directory to sys.path
-        sudo catchsegv xvfb-run --auto-servernum `which coverage` python -m pytest
+        sudo catchsegv xvfb-run --auto-servernum `which coverage` run -m pytest
