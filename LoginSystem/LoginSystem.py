@@ -1,13 +1,15 @@
 """
 Python LoginSystem System
+Generic and very simple login system.
+version 1.1
+Created by Shriram Sundaram
 
+The term lineEdit indicates the user input box(where the user type the input)
 """
-import sys, os
+import os
 import platform
 
 from PyQt5.QtWidgets import QMainWindow
-from PyQt5 import Qt
-from PyQt5 import QtGui, QtWidgets, QtCore
 
 
 class LoginSystem(QMainWindow):
@@ -34,65 +36,65 @@ class LoginSystem(QMainWindow):
         self.setWindowTitle("Welcome To LoginSystem Panel")
         self.centralwidget = QtWidgets.QWidget(self)
         self.centralwidget.setObjectName("central_widget")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(70, 90, 101, 31))
-        self.label_2.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
-        self.label_2.setObjectName("label_log")
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(70, 160, 101, 21))
-        self.label_3.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
-        self.label_3.setObjectName("label_row_size")
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(80, 240, 111, 41))
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(200, 0, 211, 41))
-        self.label_5.setStyleSheet("font: 20pt \"Modern No. 20\";")
-        self.label_5.setObjectName("label_5")
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(40, 300, 301, 21))
-        self.label_6.setObjectName("label_6")
-        self.label_7 = QtWidgets.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(330, 60, 81, 21))
-        self.label_7.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
-        self.label_7.setObjectName("label_7")
-        self.label_9 = QtWidgets.QLabel(self.centralwidget)
-        self.label_9.setGeometry(QtCore.QRect(330, 90, 131, 31))
-        self.label_9.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
-        self.label_9.setObjectName("label_9")
-        self.label_10 = QtWidgets.QLabel(self.centralwidget)
-        self.label_10.setGeometry(QtCore.QRect(330, 160, 131, 21))
-        self.label_10.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
-        self.label_10.setObjectName("label_10")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(340, 310, 111, 41))
-        self.pushButton.setObjectName("generate_button")
-        self.label_12 = QtWidgets.QLabel(self.centralwidget)
-        self.label_12.setGeometry(QtCore.QRect(330, 230, 161, 21))
-        self.label_12.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
-        self.label_12.setObjectName("label_12")
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(70, 120, 151, 21))
-        self.lineEdit.setObjectName("line_edit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(70, 190, 151, 22))
-        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.lineEdit_2.setObjectName("line_edit_row_size")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(330, 120, 151, 22))
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_4.setGeometry(QtCore.QRect(330, 190, 151, 22))
-        self.lineEdit_4.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.lineEdit_5 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_5.setGeometry(QtCore.QRect(330, 260, 151, 22))
-        self.lineEdit_5.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.label_8 = QtWidgets.QLabel(self.centralwidget)
-        self.label_8.setGeometry(QtCore.QRect(70, 60, 81, 21))
-        self.label_8.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
-        self.label_8.setObjectName("label_8")
+        self.label_username = QtWidgets.QLabel(self.centralwidget)
+        self.label_username.setGeometry(QtCore.QRect(70, 90, 101, 31))
+        self.label_username.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
+        self.label_username.setObjectName("label_log")
+        self.label_password = QtWidgets.QLabel(self.centralwidget)
+        self.label_password.setGeometry(QtCore.QRect(70, 160, 101, 21))
+        self.label_password.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
+        self.label_password.setObjectName("label_row_size")
+        self.button_login = QtWidgets.QPushButton(self.centralwidget)
+        self.button_login.setGeometry(QtCore.QRect(80, 240, 111, 41))
+        self.button_login.setObjectName("button_login")
+        self.label_login_system = QtWidgets.QLabel(self.centralwidget)
+        self.label_login_system.setGeometry(QtCore.QRect(200, 0, 211, 41))
+        self.label_login_system.setStyleSheet("font: 20pt \"Modern No. 20\";")
+        self.label_login_system.setObjectName("label_login_system")
+        self.label_log = QtWidgets.QLabel(self.centralwidget)
+        self.label_log.setGeometry(QtCore.QRect(40, 300, 301, 21))
+        self.label_log.setObjectName("label_log")
+        self.label_sign_up = QtWidgets.QLabel(self.centralwidget)
+        self.label_sign_up.setGeometry(QtCore.QRect(330, 60, 81, 21))
+        self.label_sign_up.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
+        self.label_sign_up.setObjectName("label_sign_up")
+        self.label_new_username = QtWidgets.QLabel(self.centralwidget)
+        self.label_new_username.setGeometry(QtCore.QRect(330, 90, 131, 31))
+        self.label_new_username.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
+        self.label_new_username.setObjectName("label_new_username")
+        self.label_new_password = QtWidgets.QLabel(self.centralwidget)
+        self.label_new_password.setGeometry(QtCore.QRect(330, 160, 131, 21))
+        self.label_new_password.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
+        self.label_new_password.setObjectName("label_new_password")
+        self.button_sign_up = QtWidgets.QPushButton(self.centralwidget)
+        self.button_sign_up.setGeometry(QtCore.QRect(340, 310, 111, 41))
+        self.button_sign_up.setObjectName("button_sign_up")
+        self.label_confirm_password = QtWidgets.QLabel(self.centralwidget)
+        self.label_confirm_password.setGeometry(QtCore.QRect(330, 230, 161, 21))
+        self.label_confirm_password.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
+        self.label_confirm_password.setObjectName("label_confirm_password")
+        self.lineEdit_username = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_username.setGeometry(QtCore.QRect(70, 120, 151, 21))
+        self.lineEdit_username.setObjectName("lineEdit_username")
+        self.lineEdit_password = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_password.setGeometry(QtCore.QRect(70, 190, 151, 22))
+        self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lineEdit_password.setObjectName("line_edit_row_size")
+        self.lineEdit_new_username = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_new_username.setGeometry(QtCore.QRect(330, 120, 151, 22))
+        self.lineEdit_new_username.setObjectName("lineEdit_new_username")
+        self.lineEdit_new_password = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_new_password.setGeometry(QtCore.QRect(330, 190, 151, 22))
+        self.lineEdit_new_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lineEdit_new_password.setObjectName("lineEdit_new_password")
+        self.lineEdit_confirm_password = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_confirm_password.setGeometry(QtCore.QRect(330, 260, 151, 22))
+        self.lineEdit_confirm_password.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lineEdit_confirm_password.setObjectName("lineEdit_confirm_password")
+        self.label_login = QtWidgets.QLabel(self.centralwidget)
+        self.label_login.setGeometry(QtCore.QRect(70, 60, 81, 21))
+        self.label_login.setStyleSheet("font: 18pt \"Microsoft Himalaya\";")
+        self.label_login.setObjectName("label_login")
         self.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(self)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 543, 26))
@@ -109,27 +111,27 @@ class LoginSystem(QMainWindow):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.label_2.setText(_translate("MainWindow", "Username"))
-        self.label_3.setText(_translate("MainWindow", "Password"))
-        self.label_5.setText(_translate("MainWindow", "LoginSystem"))
-        self.label_6.setText(_translate("MainWindow", "Log:"))
-        self.label_7.setText(_translate("MainWindow", "SignUp"))
-        self.label_9.setText(_translate("MainWindow", "New Username"))
-        self.label_10.setText(_translate("MainWindow", "New Password"))
-        self.pushButton.setText(_translate("MainWindow", "SignUp"))
-        self.label_12.setText(_translate("MainWindow", "Confirm Password"))
-        self.label_8.setText(_translate("MainWindow", "Login"))
-        self.pushButton_2.setText(_translate("MainWindow", "Login"))
+        self.label_username.setText(_translate("MainWindow", "Username"))
+        self.label_password.setText(_translate("MainWindow", "Password"))
+        self.label_login_system.setText(_translate("MainWindow", "LoginSystem"))
+        self.label_log.setText(_translate("MainWindow", "Log:"))
+        self.label_sign_up.setText(_translate("MainWindow", "SignUp"))
+        self.label_new_username.setText(_translate("MainWindow", "New Username"))
+        self.label_new_password.setText(_translate("MainWindow", "New Password"))
+        self.button_sign_up.setText(_translate("MainWindow", "SignUp"))
+        self.label_confirm_password.setText(_translate("MainWindow", "Confirm Password"))
+        self.label_login.setText(_translate("MainWindow", "Login"))
+        self.button_login.setText(_translate("MainWindow", "Login"))
 
     def initLogin(self):
-        self.pushButton_2.setText("Login")
-        self.pushButton_2.clicked.connect(self.inputsFromUser)
-        self.pushButton.clicked.connect(self.signUp)
+        self.button_login.setText("Login")
+        self.button_login.clicked.connect(self.inputsFromUser)
+        self.button_sign_up.clicked.connect(self.signUp)
 
     def inputsFromUser(self):
         if self.UserName is not None:
             self.UserName = str(self.lineEdit.text())
-            self.Password = str(self.lineEdit_2.text())
+            self.Password = str(self.lineEdit_password.text())
             self.openSource()
 
     def openSource(self):
@@ -151,31 +153,35 @@ class LoginSystem(QMainWindow):
 
         if self.new_input_formatted_username == self.username_info.rstrip("\n"):
             if self.new_input_formatted_password == self.password_info.rstrip("\n"):
-                self.label_6.setText("Successfully Logged in")
+                self.label_log.setText("Successfully Logged in")
             else:
-                self.label_6.setText("Username and Password is incorrect")
+                self.label_log.setText("Username and Password is incorrect")
         else:
-            self.label_6.setText("The system couldn't find the Username, Please sign up")
+            self.label_log.setText("The system couldn't "
+                                   "find the Username, Please sign up")
 
     def signUp(self):
         """
         Sign Up Logic
 
         """
-        if self.lineEdit_3 is not None:
-            self.New_UserName = str(str("Username = ") + str(self.lineEdit_3.text()))
+        if self.lineEdit_new_username is not None:
+            self.New_UserName = str(str("Username = ") +
+                                    str(self.lineEdit_new_username.text()))
             # print(self.New_UserName)
-        if self.lineEdit_4 is not None:
-            self.New_Password = str(str("Password = ") + str(self.lineEdit_4.text()))
+        if self.lineEdit_new_password is not None:
+            self.New_Password = str(str("Password = ") +
+                                    str(self.lineEdit_new_password.text()))
             # print(self.New_Password)
-        if self.lineEdit_5 is not None:
-            self.Confirm_Password = str(str("Password = ") + self.lineEdit_5.text())
+        if self.lineEdit_confirm_password is not None:
+            self.Confirm_Password = str(str("Password = ") +
+                                        self.lineEdit_confirm_password.text())
 
         if self.New_Password == self.Confirm_Password:
             if self.New_UserName + "\n" in self.already_saved:
-                self.label_6.setText("The Username already exist!!!")
+                self.label_log.setText("The Username already exist!!!")
             else:
-                self.label_6.setText("Sign Up Successful")
+                self.label_log.setText("Sign Up Successful")
                 if str(platform.system()) == "Linux":
                     New_Login = open("/LoginInfo", 'a')
                 elif str(platform.system()) == "Windows":
@@ -189,7 +195,7 @@ class LoginSystem(QMainWindow):
                     New_Login.writelines("\n")
                 New_Login.close()
         else:
-            self.label_6.setText("New Password and Confirm Password doesnt Match")
+            self.label_log.setText("New Password and Confirm Password doesnt Match")
 
 
 if __name__ == "__main__":
