@@ -19,9 +19,9 @@ class LoginSystem(QMainWindow):
         self.New_UserName = ""
         self.New_Password = ""
         self.Confirm_Password = ""
-        #file = open("LoginInfo")
-        #self.already_saved = file.readlines()
-        #file.close()
+        file = open("../LoginInfo")
+        self.already_saved = file.readlines()
+        file.close()
 
         super(LoginSystem, self).__init__()
         self.setObjectName("MainWindow")
@@ -171,7 +171,7 @@ class LoginSystem(QMainWindow):
                 self.label_6.setText("The Username already exist!!!")
             else:
                 self.label_6.setText("Sign Up Successful")
-                New_Login = open("LoginInfo", 'a')
+                New_Login = open("../LoginInfo", 'a')
                 New_UserName = str(self.New_UserName)
                 New_Password = str(self.New_Password)
 
